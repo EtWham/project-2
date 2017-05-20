@@ -30,7 +30,7 @@ controller(app);
 //PORT
 var PORT = process.env.PORT || 3000;
 
-//=Sync database then start server
+//Sync database then start server
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);

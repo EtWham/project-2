@@ -28,3 +28,27 @@ CREATE TABLE helped (
   'date' TIMESTAMP,
   PRIMARY KEY (id)
 );
+
+CREATE TABLE class1 (
+  'id' INT NOT NULL AUTO_INCREMENT,
+  'userName' VARCHAR (255) NOT NULL,
+  'userStatus' BOOLEAN NOT NULL,
+  'date' TIMESTAMP,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE class2 (
+  'id' INT NOT NULL AUTO_INCREMENT,
+  'userName' VARCHAR (255) NOT NULL,
+  'userStatus' BOOLEAN NOT NULL,
+  'date' TIMESTAMP,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE class2 (
+  'id' INT NOT NULL AUTO_INCREMENT,
+  'userName' VARCHAR (255) NOT NULL,
+  'userStatus' BOOLEAN NOT NULL,
+  'date' TIMESTAMP,
+  PRIMARY KEY (id)
+);
