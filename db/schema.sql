@@ -1,17 +1,14 @@
 
-CREATE DATABASE Users;
+USE studyUsers;
 
-USE Users;
-
--- userStatus signifies if user is asking for help; true is asking for help, false is offering help
+-- for now userStatus signifies if user is asking for help; true is asking for help, false is offering help
 
 CREATE TABLE allUsers (
   'id' INT NOT NULL AUTO_INCREMENT,
   'userName' VARCHAR (255) NOT NULL,
   'classes' VARCHAR (400) NOT NULL,
   'userStatus' BOOLEAN NOT NULL,
-  'survey'
-  'date' TIMESTAMP,
+  'survey' INT,
   PRIMARY KEY (id)
 );
 --

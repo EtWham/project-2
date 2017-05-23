@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var exphbs = require("express-handlebars");
 
 var db = require("./models");
-var controller = require('./controllers/controller')
+
 
 //Server
 var app = express();
@@ -25,10 +25,10 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(methodOverride("_method"));
 
-controller(app);
+
 
 //PORT
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 5000;
 
 //Sync database then start server
 db.sequelize.sync({ force: true }).then(function() {
