@@ -8,7 +8,15 @@ module.exports = function(app) {
 
   //homepage route
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/homepage.html"));
+    res.sendFile(path.join(__dirname + "/../public/HomePage.html"));
+  });
+  //login route
+  app.get("/login", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/Login.html"));
+  });
+  //about route
+  app.get("/aboutUs", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/about.html"));
   });
   //survey route
   app.get("/survey", function(req, res) {
@@ -18,5 +26,4 @@ module.exports = function(app) {
   app.get("/chat", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/chatroom.html"));
   });
-
 };

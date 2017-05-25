@@ -140,7 +140,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">Your match!<h4>
+					<h4 class="modal-title">Your study buddy!<h4>
 				</div>
 				<div class="modal-body">
 					<h5 class="modal-title" id="matchName"></h5>
@@ -164,14 +164,14 @@
 				var scoreNum = $("#survey" + i).val().trim().charAt(0);
 				scoreArray.push(parseInt(scoreNum));
 			}
-			//creates the newMatch object
+			//creates the newUser object
 			var newUser = {
 				name: $('#name').val().trim(),
 				photo: $('#img-link').val().trim(),
 				scores: scoreArray
 			}
 			//post request sending the newMatch object to the server
-			$.post('/api/matches', newMatch)
+			$.post('/api/matches', newUser)
 				.done(function(response) {
 					// returns the response, which should be the equal or closest match
 					var bestMatch = response;

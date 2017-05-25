@@ -26,7 +26,6 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(methodOverride("_method"));
 
 
-
 //PORT
 var PORT = process.env.PORT || 5000;
 
