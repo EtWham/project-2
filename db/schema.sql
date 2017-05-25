@@ -6,6 +6,8 @@ USE studyUsers;
 CREATE TABLE allUsers (
   'id' INT NOT NULL AUTO_INCREMENT,
   'userName' VARCHAR (255) NOT NULL,
+  'userEmail' VARCHAR (255) NOT NULL,
+  'userPic' --what type of data is this?
   'classes' VARCHAR (400) NOT NULL,
   'userStatus' BOOLEAN NOT NULL,
   'survey' INT,

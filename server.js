@@ -25,6 +25,8 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(methodOverride("_method"));
 
+require('./routes/html-Routes.js')(app);
+
 
 //PORT
 var PORT = process.env.PORT || 5000;
