@@ -42,7 +42,7 @@
   </style>
 </head>
 <body>
-
+<!-- navbar -->
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -55,10 +55,10 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="HomePage.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="profile.html">Student Profile</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -66,7 +66,7 @@
     </div>
   </div>
 </nav>
-
+<!-- survey and chatroom links (classes/subjects) -->
 <div class="container-fluid text-center">
   <div class="row content">
     <div class="col-sm-2 sidenav">
@@ -77,27 +77,34 @@
       <p><a href="physics.html">Physics</a></p>
       <p><a href="history.html">History</a></p>
     </div>
-    <div class="col-sm-8 text-left">
-      <h1>Welcome to Study Buddy</h1>
-      <p>At Student Center we both create chatrooms for students in the same courses and pair students that need extra help in their courses with students that have strengths in those very same areas. Our users help each other in a certain subject or more by interacting with via the webchat functionality. Typically, the students will be communicating with everyone sharing in their experience and have the opportunity to work one-on-one with others should they so request it, receiving instruction in the area they need. This way we hope to provide our users plenty of opportunities to learn and grow with each other!</p>
-      <hr>
-      <h3></h3>
-      <p></p>
-    </div>
-    <div class="col-sm-2 sidenav">
-      <div class="well">
-        <p>ADS</p>
-      </div>
-      <div class="well">
-        <p>ADS</p>
-      </div>
+    <div class="col-md-8 col-sm-4">
+      <h1> Welcome to the Calculus chatroom! </h1>
     </div>
   </div>
+</div>
+    <!-- disqus code config -->
+<div class="container" id="chatLog">
+    <div class="col-sm-8" id="disqus_thread"></div>
+    <script>    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    var disqus_config = function () {
+    // this.page.url = PAGE_URL + ;  // Replace PAGE_URL with your page's canonical URL variable.
+    // this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://studycenter.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
 
 <footer class="container-fluid text-center">
   <p>Footer Text. Website title, copyright, made by, etc...</p>
 </footer>
-
+<script id="dsq-count-scr" src="//studycenter.disqus.com/count.js" async></script>
 </body>
 </html>
