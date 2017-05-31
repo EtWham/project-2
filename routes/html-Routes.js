@@ -8,11 +8,11 @@ module.exports = function(app) {
 
   //homepage route
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/HomePage.html"));
+    res.sendFile(path.join(__dirname + "/../public/Login.html"));
   });
   //login route
-  app.get("/login", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/Login.html"));
+  app.get("/home", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/HomePage.html"));
   });
   //about route
   app.get("/aboutUs", function(req, res) {
@@ -28,22 +28,22 @@ module.exports = function(app) {
   });
   //coding chat room route
   app.get("/coding", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/chatroom.html"));
+    res.sendFile(path.join(__dirname + "/../public/coding.html"));
   });
   //algebra chat room route
   app.get("/algebra", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/chatroom.html"));
+    res.sendFile(path.join(__dirname + "/../public/algebra.html"));
   });
   //calculus chat room route
   app.get("/calculus", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/chatroom.html"));
+    res.sendFile(path.join(__dirname + "/../public/calculus.html"));
   });
   //physics chat room route
   app.get("/physics", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/chatroom.html"));
+    res.sendFile(path.join(__dirname + "/../public/physics.html"));
   });
   //history chat room route
   app.get("/history", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/chatroom.html"));
+    res.sendFile(path.join(__dirname + "/../public/history.html"));
   });
 };
