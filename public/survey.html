@@ -10,124 +10,89 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
 </head>
 
 <body>
 	<div class="container" id="userInput">
-		<h1 class="page-header">Please fill out our user survey</h1>
+		<h1 class="page-header">Please fill out your profile page</h1>
 		<!-- inputs to provide user name & photo -->
-		<h2><strong>What about You!</strong></h2>
-		<h3>Name: </h3>
+		<h2>What about You!</h2>
+		<!-- <h3>Name: </h3>
 		<input class="form-control" type="text" name="name" id="userName">
 		<br>
 		<h3>Email: </h3>
 		<input class="form-control" type="text" name="email" id="userEmail">
-		<br>
+		<br> -->
 		<h3>Short Bio: </h3>
 		<input class="form-control" type="text" name="bio" id="userBio">
 		<h3>Link to Photo Image: </h3>
 		<input class="form-control" type="text" name="img-link" id="userImage">
 		<br>
-		<!-- start with 4 but make button to add more classes -->
+		<!-- start with 4 but could add more classes -->
 		<h3>List of classes: </h3>
 		<ul>
-		<input class="form-control" type="text" name="classList1" id="classes">
-		<input class="form-control" type="text" name="classList2" id="classes">
-		<input class="form-control" type="text" name="classList3" id="classes">
-		<input class="form-control" type="text" name="classList4" id="classes">
+		<p><strong>1.</strong></p><input class="form-control" type="text" name="classList1" id="classes">
+		<p><strong>2.</strong></p><input class="form-control" type="text" name="classList2" id="classes">
+		<p><strong>3.</strong></p><input class="form-control" type="text" name="classList3" id="classes">
+		<p><strong>4.</strong></p><input class="form-control" type="text" name="classList4" id="classes">
 	</ul>
 		<br>
+<!-- user interests input -->
+	<form>
+		<span id="userInterest"><h3>Tell us your interests: </h3><input id="interest" type="text" ><input id="add-interest" value="Add Item" type="submit"></span>
+	</form>
+<!-- div filled with user interests -->
+	<div id="userInterests"></div>
+
 		<!-- survey questions -->
-		<!-- brought to specific instances of surveys on click of classes/topics user registered for -->
 		<h2 class="page-header"></h2>
 		<h2><strong>Q 1</strong></h2>
-		<h3>Question 1</h3>
+		<h3><strong>How strong is your confidence that you will succeed in the following subject area?</strong></h3>
 		<select id="survey1">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
+			<option value="1">1 (Not Confident)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Very Confident)</option>
 		</select>
 
 		<h2><strong>Q 2</strong></h2>
-		<h3>Question 2</h3>
+		<h3><strong>What is the highest level of education that you have recieved within the following subject area?</strong></h3>
 		<select id="survey2">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
+			<option value="1">None</option>
+			<option value="2">High School</option>
+			<option value="3">Undergraduate</option>
+			<option value="5">Graduate or Above</option>
 		</select>
 
 		<h2><strong>Q 3</strong></h2>
-		<h3>Question 3</h3>
+		<h3><strong>How enthusitatic are you in learning more about this subject matter?</strong></h3>
 		<select id="survey3">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
+			<option value="1">1 (Slightly Interested)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Extremly Interested)</option>
 		</select>
 
 		<h2><strong>Q 4</strong></h2>
-		<h3>Question 4</h3>
+		<h3><strong>If the situation arises, are you comfortable aiding others in this respective subject area?</strong></h3>
 		<select id="survey4">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
+			<option value="1">1 (Strongly Uncomfortable)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Comfortable)</option>
 		</select>
 
 		<h2><strong>Q 5</strong></h2>
-		<h3>Question 5</h3>
+		<h3>Do you believe you will require assistance in this subject area?</h3>
 		<select id="survey5">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
-		</select>
-
-		<h2><strong>Q 6</strong></h2>
-		<h3>Question 6</h3>
-		<select id="survey6">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
-		</select>
-
-		<h2><strong>Q 7</strong></h2>
-		<h3>Question 7</h3>
-		<select id="survey7">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
-		</select>
-
-		<h2><strong>Q 8</strong></h2>
-		<h3>Question 8</h3>
-		<select id="survey8">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
-		</select>
-
-		<h2><strong>Q 9</strong></h2>
-		<h3>Question 9</h3>
-		<select id="survey9">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
-		</select>
-
-		<h2><strong>Q 10</strong></h2>
-		<h3>Question 10</h3>
-		<select id="survey10">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
+			<option value="0">yes </option>
+			<option value="2.5">maybe</option>
+			<option value="4">unlikely</option>
+			<option value="5">no</option>
 		</select>
 	</div>
 	<!-- creating the submit button  -->
@@ -160,7 +125,7 @@
 			//creates the array to store the scores from the survey questions
 			var scoreArray = [];
 			//runs through the survey question ids taking the user answers making them integers then pushing them into the score array
-			for (var i = 1; i < 11; i++) {
+			for (var i = 1; i < 8; i++) {
 				var scoreNum = $("#survey" + i).val().trim().charAt(0);
 				scoreArray.push(parseInt(scoreNum));
 			}
@@ -180,6 +145,40 @@
 					$('#match-img').attr('src', bestMatch.photo);
 				});
 		});
+		// javascript code for the list of interests
+    var interestCount = 0;
+
+    $("#add-interest").on("click", function(event) {
+      event.preventDefault();
+
+      var interestAddition = $("#interest").val().trim();
+
+      var newInterest = $("<p>");
+
+      newInterest.attr("id", "item-" + interestCount);
+      newInterest.append(" " + interestAddition);
+
+      var removeInterest = $("<button>");
+      removeInterest.attr("data-interest", interestCount);
+      removeInterest.addClass("removal");
+      removeInterest.append("X");
+
+      newInterest = newInterest.prepend(removeInterest);
+
+      $("#userInterests").append(newInterest);
+
+      $("#userInterests").val("");
+      interestCount++;
+    });
+    // When a user clicks a check box then delete the specific content
+    // (NOTE: Pay attention to the unusual syntax here for the click event.
+    // Because we are creating click events on "dynamic" content, we can't just use the usual "on" "click" syntax.)
+    $(document.body).on("click", ".removal", function() {
+      // Get the number of the button from its data attribute and hold in a variable called  toDoNumber.
+      var interestNumber = $(this).attr("data-interest");
+      // Select and Remove the specific <p> element that previously held the to do item number.
+      $("#item-" + interestNumber).remove();
+    });
 	</script>
 </body>
 

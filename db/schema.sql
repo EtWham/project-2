@@ -7,7 +7,9 @@ USE studyusers;
 CREATE TABLE `users` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `userName` VARCHAR (255) NOT NULL,
+  `userpassword` VARCHAR (255) NOT NULL,
   `userEmail` VARCHAR (255) NOT NULL,
+  `userBio1` VARCHAR (1000),
   `class` VARCHAR (400) NOT NULL,
   `survey` INT,
   PRIMARY KEY (id)
