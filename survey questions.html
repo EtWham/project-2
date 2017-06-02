@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <body>
-!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>FriendFinder</title>
+	<title>The Study Center</title>
 
 	<!-- Latest compiled and minified CSS & JS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -25,85 +24,57 @@
 	<div class="container">
 
 		<h2>Survey Questions</h2>
+		<p> 1 being the low level and 5 being the strongest)
 		
-		<h3><strong>1. How strong is your confidence in the following subject area? </strong></h3>
-	 	<select data-placeholder="" class="chosen-select" id="q1">
-	 		<option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-      	</select>
+		<!-- survey questions -->
+		<h2 class="page-header"></h2>
+		<h2><strong>Q 1</strong></h2>
+		<h3><strong>How strong is your confidence that you will succeed in the following subject area?</strong></h3>
+		<select id="survey1">
+			<option value="1">1 (Not Confident)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Very Confident)</option>
+		</select>
 
-		<h3><strong>2. What is the highest level of education that you have within the following subject area?</strong></h3>
-	 	<select data-placeholder="" class="chosen-select" id="q2">
-	 		<option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-      	</select>
+		<h2><strong>Q 2</strong></h2>
+		<h3><strong>What is the highest level of education that you have recieved within the following subject area?</strong></h3>
+		<select id="survey2">
+			<option value="1">None</option>
+			<option value="2">High School</option>
+			<option value="3">Undergraduate</option>
+			<option value="5">Graduate or Above</option>
+		</select>
 
+		<h2><strong>Q 3</strong></h2>
+		<h3><strong>How enthusitatic are you in learning more about this subject matter?</strong></h3>
+		<select id="survey3">
+			<option value="1">1 (Slightly Interested)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Extremly Interested)</option>
+		</select>
 
-		<h3><strong>3. How enthusitatic are you in learning more about this subject area?</strong></h3>
-	 	<select data-placeholder="" class="chosen-select" id="q3">
-	 		<option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-      	</select>
+		<h2><strong>Q 4</strong></h2>
+		<h3><strong>If the situation arises, are you comfortable aiding others in this respective subject area?</strong></h3>
+		<select id="survey4">
+			<option value="1">1 (Strongly Uncomfortable)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Comfortable)</option>
+		</select>
 
-
-		<h3><strong>4. How enthusitatic are you in learning more about this subject area?</strong></h3>
-	 	<select data-placeholder="" class="chosen-select" id="q4">
-	 		<option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-      	</select>
-
-
-		<h3><strong>5. Are you comfortable being a tutor in this respective subject area?</strong></h3>
-	 	<select data-placeholder="" class="chosen-select" id="q5">
-	 		<option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-      	</select>
-
-
-		<h3><strong>Question 6</strong></h3>
-		<h4>Is it difficult for you to relate to your current teachers style of teaching?.</h4>
-	 	<select data-placeholder="" class="chosen-select" id="q6">
-	 		<option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-      	</select>
-
-
-		<h3><strong>Question 7</strong></h3>
-		<h4>6. How many years of experience do you have as a tutor in this subject area?</h4>
-	 	<select data-placeholder="" class="chosen-select" id="q7">
-	 		<option value=""></option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-      	</select>
-
-		
+		<h2><strong>Q 5</strong></h2>
+		<h3>Do you believe you will require assistance in this subject area?</h3>
+		<select id="survey5">
+			<option value="0">yes </option>
+			<option value="2.5">maybe</option>
+			<option value="4">unlikely</option>
+			<option value="5">no</option>
+		</select>
 
 		<br>
 		<br>
