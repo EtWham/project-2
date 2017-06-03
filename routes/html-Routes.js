@@ -46,4 +46,8 @@ module.exports = function(app) {
   app.get("/history", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/history.html"));
   });
+  //if no matching route funnel back to the entry page
+  app.use(function(req, res) {
+    res.sendFile(path.join(__dirname, "/../public/Login.html"));
+  });
 };

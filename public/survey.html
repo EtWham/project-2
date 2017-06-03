@@ -4,52 +4,54 @@
 <head>
 	<title>User Survey</title>
 	<meta charset="utf-8">
-	<!-- bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<!-- jQuery -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<!-- Font Awesome Glyphicons -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<!-- Chosen -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
 </head>
 
 <body>
 	<div class="container" id="userInput">
-		<h1 class="page-header">Please fill out your profile page</h1>
+		<h1 class="page-header">Please fill out this short survey</h1>
 		<!-- inputs to provide user name & photo -->
-		<h2>What about You!</h2>
-		<!-- <h3>Name: </h3>
+		<!-- <h2>What about You!</h2> -->
+		<h3>Name: </h3>
 		<input class="form-control" type="text" name="name" id="userName">
 		<br>
 		<h3>Email: </h3>
 		<input class="form-control" type="text" name="email" id="userEmail">
-		<br> -->
-		<h3>Short Bio: </h3>
-		<input class="form-control" type="text" name="bio" id="userBio">
+		<br>
+		<!-- <h3>Short Bio: </h3>
+		<input class="form-control" type="text" name="bio" id="userBio" required> -->
 		<h3>Link to Photo Image: </h3>
-		<input class="form-control" type="text" name="img-link" id="userImage">
+		<input class="form-control" type="text" name="img-link" id="userImage" required>
 		<br>
 		<!-- start with 4 but could add more classes -->
-		<h3>List of classes: </h3>
+		<!-- <h3>List of classes: </h3>
 		<ul>
-		<p><strong>1.</strong></p><input class="form-control" type="text" name="classList1" id="classes">
-		<p><strong>2.</strong></p><input class="form-control" type="text" name="classList2" id="classes">
-		<p><strong>3.</strong></p><input class="form-control" type="text" name="classList3" id="classes">
-		<p><strong>4.</strong></p><input class="form-control" type="text" name="classList4" id="classes">
-	</ul>
-		<br>
-<!-- user interests input -->
-	<form>
-		<span id="userInterest"><h3>Tell us your interests: </h3><input id="interest" type="text" ><input id="add-interest" value="Add Item" type="submit"></span>
-	</form>
-<!-- div filled with user interests -->
-	<div id="userInterests"></div>
+			<p><strong>1.</strong></p><input class="form-control" type="text" name="classList1" id="classes">
+			<p><strong>2.</strong></p><input class="form-control" type="text" name="classList2" id="classes">
+			<p><strong>3.</strong></p><input class="form-control" type="text" name="classList3" id="classes">
+			<p><strong>4.</strong></p><input class="form-control" type="text" name="classList4" id="classes">
+		</ul>
+		<br> -->
+		<!-- user interests input -->
+		<!-- <form>
+			<span id="userInterest"><h3>Tell us your interests: </h3><input id="interest" type="text" ><input id="add-interest" value="Add Item" type="submit"></span>
+		</form> -->
+		<!-- div filled with user interests -->
+		<!-- <div id="userInterests"></div> -->
 
 		<!-- survey questions -->
-		<h2 class="page-header"></h2>
 		<h2><strong>Q 1</strong></h2>
 		<h3><strong>How strong is your confidence that you will succeed in the following subject area?</strong></h3>
-		<select id="survey1">
+		<select class="chosen-select" id="survey1">
 			<option value="1">1 (Not Confident)</option>
 			<option value="2">2</option>
 			<option value="3">3</option>
@@ -59,7 +61,7 @@
 
 		<h2><strong>Q 2</strong></h2>
 		<h3><strong>What is the highest level of education that you have recieved within the following subject area?</strong></h3>
-		<select id="survey2">
+		<select class="chosen-select" id="survey2">
 			<option value="1">None</option>
 			<option value="2">High School</option>
 			<option value="3">Undergraduate</option>
@@ -68,7 +70,7 @@
 
 		<h2><strong>Q 3</strong></h2>
 		<h3><strong>How enthusitatic are you in learning more about this subject matter?</strong></h3>
-		<select id="survey3">
+		<select class="chosen-select" id="survey3">
 			<option value="1">1 (Slightly Interested)</option>
 			<option value="2">2</option>
 			<option value="3">3</option>
@@ -78,7 +80,7 @@
 
 		<h2><strong>Q 4</strong></h2>
 		<h3><strong>If the situation arises, are you comfortable aiding others in this respective subject area?</strong></h3>
-		<select id="survey4">
+		<select class="chosen-select" id="survey4">
 			<option value="1">1 (Strongly Uncomfortable)</option>
 			<option value="2">2</option>
 			<option value="3">3</option>
@@ -87,8 +89,8 @@
 		</select>
 
 		<h2><strong>Q 5</strong></h2>
-		<h3>Do you believe you will require assistance in this subject area?</h3>
-		<select id="survey5">
+		<h3><strong>Do you believe you will require assistance in this subject area?</strong></h3>
+		<select class="chosen-select" id="survey5">
 			<option value="0">yes </option>
 			<option value="2.5">maybe</option>
 			<option value="4">unlikely</option>
@@ -97,20 +99,20 @@
 	</div>
 	<!-- creating the submit button  -->
 	<div class="text-left">
-		<button type="button" class="btn btn-primary" id="submit-btn" data-toggle="modal" data-target="#theModal"><span class="glyphicon glyphicon-share-alt"></span>Submit</button>
+		<button type="submit" class="btn btn-primary" id="submit-btn" data-toggle="modal" data-target="#theModal"><span class="glyphicon glyphicon-share-alt"></span>Submit</button>
 	</div>
 	<!-- creating the modal -->
-	<div id="theModal" class="modal fade" role="dialog">
+	<div id="modal-results" class="modal fade" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">Your study buddy!<h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+					<h2 class="modal-title">Your study buddy!<h2>
 				</div>
 				<div class="modal-body">
-					<h5 class="modal-title" id="matchName"></h5>
-					<!-- <h5 class="modal-title" id="matchEmail"></h5> -->
-					<img id="matchImage" src="">
+					<h2 class="modal-title" id="buddyName"></h2>
+					<h2 class="modal-title" id="buddyEmail"></h2>
+					<img id="buddyImage" src="" alt="">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -119,66 +121,76 @@
 		</div>
 	</div>
 	<!-- jQuery activation -->
-	<!-- want to match by distance, meaning the lowest scores on the survey get matched with the highest then the lower get matched with the higher and the low get matched with the high and so on -->
+
 	<script type="text/javascript">
-		$('#submit-btn').on('click', function() {
-			//creates the array to store the scores from the survey questions
-			var scoreArray = [];
-			//runs through the survey question ids taking the user answers making them integers then pushing them into the score array
-			for (var i = 1; i < 8; i++) {
-				var scoreNum = $("#survey" + i).val().trim().charAt(0);
-				scoreArray.push(parseInt(scoreNum));
+		// Chosen CSS
+		var config = {
+			".chosen-select": {},
+			".chosen-select-deselect": {
+				allow_single_deselect: true
+			},
+			".chosen-select-no-single": {
+				disable_search_threshold: 10
+			},
+			".chosen-select-no-results": {
+				no_results_text: "Oops, nothing found!"
+			},
+			".chosen-select-width": {
+				width: "95%"
 			}
-			//creates the newUser object
-			var newUser = {
-				name: $('#name').val().trim(),
-				photo: $('#img-link').val().trim(),
-				scores: scoreArray
-			}
-			//post request sending the newMatch object to the server
-			$.post('/api/matches', newUser)
-				.done(function(response) {
-					// returns the response, which should be the equal or closest match
-					var bestMatch = response;
-					//appends to divs on the page for the user to see
-					$('#match-name').text(bestMatch.name);
-					$('#match-img').attr('src', bestMatch.photo);
+		};
+
+		for (var selector in config) {
+			$(selector).chosen(config[selector]);
+		}
+		// Capture the form inputs
+		$("#submit-btn").on("click", function(event) {
+			event.preventDefault();
+			// Form validation
+			function validateForm() {
+				var isValid = true;
+				$(".form-control").each(function() {
+					if ($(this).val() === "") {
+						isValid = false;
+					}
 				});
+
+				$(".chosen-select").each(function() {
+					if ($(this).val() === "") {
+						isValid = false;
+					}
+				});
+				return isValid;
+			}
+			// If all required fields are filled
+			if (validateForm()) {
+				// Create an object for the user"s data
+
+				var userData = {
+					name: $("#userName").val(),
+					email: $("#userEmail").val(),
+					photo: $("#userImage").val(),
+					score: [
+						$("#survey1").val(),
+						$("#survey2").val(),
+						$("#survey3").val(),
+						$("#survey4").val(),
+						$("#survey5").val()
+					]
+				};
+
+				$.post("/api/studyusers", userData, function(data) {
+					// Grab the result from the AJAX post so that the best match's name and photo are displayed.
+					$("#buddyName").text(data.name);
+					$("#buddyEmail").text(data.email);
+					$("#buddyImage").attr("src", data.photo);
+					// Show the modal with the best match
+					$("#modal-results").modal("toggle");
+				});
+			} else {
+				alert("Please fill out all fields before submitting!");
+			}
 		});
-		// javascript code for the list of interests
-    var interestCount = 0;
-
-    $("#add-interest").on("click", function(event) {
-      event.preventDefault();
-
-      var interestAddition = $("#interest").val().trim();
-
-      var newInterest = $("<p>");
-
-      newInterest.attr("id", "item-" + interestCount);
-      newInterest.append(" " + interestAddition);
-
-      var removeInterest = $("<button>");
-      removeInterest.attr("data-interest", interestCount);
-      removeInterest.addClass("removal");
-      removeInterest.append("X");
-
-      newInterest = newInterest.prepend(removeInterest);
-
-      $("#userInterests").append(newInterest);
-
-      $("#userInterests").val("");
-      interestCount++;
-    });
-    // When a user clicks a check box then delete the specific content
-    // (NOTE: Pay attention to the unusual syntax here for the click event.
-    // Because we are creating click events on "dynamic" content, we can't just use the usual "on" "click" syntax.)
-    $(document.body).on("click", ".removal", function() {
-      // Get the number of the button from its data attribute and hold in a variable called  toDoNumber.
-      var interestNumber = $(this).attr("data-interest");
-      // Select and Remove the specific <p> element that previously held the to do item number.
-      $("#item-" + interestNumber).remove();
-    });
 	</script>
 </body>
 

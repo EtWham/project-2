@@ -25,6 +25,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(methodOverride("_method"));
 
+require('./routes/api-Routes.js')(app);
 require('./routes/html-Routes.js')(app);
 
 
