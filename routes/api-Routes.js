@@ -20,17 +20,18 @@ module.exports = function(app) {
 
     var totalDifference = 0;
 
-    for (var i = 0; i < users.length; i++) {
-      console.log(users[i].userName);
+    for (var i = 0; i < buddies.length; i++) {
+      console.log(buddies[i].name);
       totalDifference = 0;
 
-      for (var j = 0; j < users[i].survey[j]; j++) {
-        totalDifference = Math.abs(parseInt(userScore[j]) - parseInt(users[i].survey[j]));
+      for (var j = 0; j < buddies[i].score[j]; j++) {
+        totalDifference += Math.abs(parseInt(userScore[j]) - parseInt(buddies[i].score[j]));
+        console.log(totalDifference);
 
-        if (totalDifference >= bestMatch.studyDifference) {
-          bestBuddy.name = users[i].name;
-          bestBuddy.photo = users[i].email;
-          bestBuddy.photo = users[i].photo;
+        if (totalDifference <= bestBuddy.studyDifference) {
+          bestBuddy.name = buddies[i].name;
+          bestBuddy.email = buddies[i].email;
+          bestBuddy.photo = buddies[i].photo;
           bestBuddy.studyDifference = totalDifference;
         }
       }

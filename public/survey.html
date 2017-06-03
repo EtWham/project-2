@@ -14,11 +14,68 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
-</head>
 
+<style>
+	/* Remove the navbar's default margin-bottom and rounded borders */
+	.navbar {
+		margin-bottom: 0;
+		border-radius: 0;
+	}
+
+	/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+	.row.content {height: 450px}
+
+	/* Set gray background color and 100% height */
+	.sidenav {
+		padding-top: 20px;
+		background-color: #f1f1f1;
+		height: 100%;
+	}
+
+	/* Set black background color, white text and some padding */
+	footer {
+		background-color: #555;
+		color: white;
+		padding: 15px;
+	}
+
+	/* On small screens, set height to 'auto' for sidenav and grid */
+	@media screen and (max-width: 767px) {
+		.sidenav {
+			height: auto;
+			padding: 15px;
+		}
+		.row.content {height:auto;}
+	}
+</style>
+</head>
+<body>
+<!-- navbar -->
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<img src="./assets/img/studycenter.jpg" alt="logo" class="img-rounded" style="width:50px;height:50px; margin-right:20px;">
+	</div>
+	<div class="collapse navbar-collapse" id="myNavbar">
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="HomePage.html">Home</a></li>
+			<li><a href="profile.html">Student Profile</a></li>
+			<li><a href="contact.html">Contact Us</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		</ul>
+	</div>
+</div>
+</nav>
 <body>
 	<div class="container" id="userInput">
-		<h1 class="page-header">Please fill out this short survey</h1>
+		<h1 class="page-header">Please fill out this short survey to find your study buddy!</h1>
 		<!-- inputs to provide user name & photo -->
 		<!-- <h2>What about You!</h2> -->
 		<h3>Name: </h3>
@@ -27,26 +84,9 @@
 		<h3>Email: </h3>
 		<input class="form-control" type="text" name="email" id="userEmail">
 		<br>
-		<!-- <h3>Short Bio: </h3>
-		<input class="form-control" type="text" name="bio" id="userBio" required> -->
 		<h3>Link to Photo Image: </h3>
 		<input class="form-control" type="text" name="img-link" id="userImage" required>
 		<br>
-		<!-- start with 4 but could add more classes -->
-		<!-- <h3>List of classes: </h3>
-		<ul>
-			<p><strong>1.</strong></p><input class="form-control" type="text" name="classList1" id="classes">
-			<p><strong>2.</strong></p><input class="form-control" type="text" name="classList2" id="classes">
-			<p><strong>3.</strong></p><input class="form-control" type="text" name="classList3" id="classes">
-			<p><strong>4.</strong></p><input class="form-control" type="text" name="classList4" id="classes">
-		</ul>
-		<br> -->
-		<!-- user interests input -->
-		<!-- <form>
-			<span id="userInterest"><h3>Tell us your interests: </h3><input id="interest" type="text" ><input id="add-interest" value="Add Item" type="submit"></span>
-		</form> -->
-		<!-- div filled with user interests -->
-		<!-- <div id="userInterests"></div> -->
 
 		<!-- survey questions -->
 		<h2><strong>Q 1</strong></h2>
@@ -120,9 +160,30 @@
 			</div>
 		</div>
 	</div>
-	<!-- jQuery activation -->
 
+	<!-- jQuery activation -->
 	<script type="text/javascript">
+		var mysql = require("mysql");
+
+		var connection = mysql.createConnection({
+  		host: "localhost",
+		  port: 3306,
+		  user: "root",
+  		password: "root",
+  database: "studyusers"
+});
+
+		connection.connect(function(err) {
+  		if (err) throw err;
+  		console.log("connection successful!");
+		});
+
+		function insertBuddy() {
+			  var query = "SELECT position,song,artist,year FROM top5000 WHERE position BETWEEN ? AND ?";
+			connection.query("INSERT INTO studyusers (userName,userEmail, survey)" +
+		}
+
+
 		// Chosen CSS
 		var config = {
 			".chosen-select": {},
