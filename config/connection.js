@@ -13,8 +13,7 @@ else{
 		password: 'root',
 		database: 'studyUsers'
 	});
-
-}
+};
 //checking the connection
 connection.connect(function(err){
 	if(err){

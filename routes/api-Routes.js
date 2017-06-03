@@ -26,7 +26,6 @@ module.exports = function(app) {
 
       for (var j = 0; j < buddies[i].score[j]; j++) {
         totalDifference += Math.abs(parseInt(userScore[j]) - parseInt(buddies[i].score[j]));
-        console.log(totalDifference);
 
         if (totalDifference <= bestBuddy.studyDifference) {
           bestBuddy.name = buddies[i].name;
