@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>User Survey</title>
+	<meta charset="utf-8">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- jQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body>
+	<div class="container" id="userInput">
+		<h1 class="page-header">Please fill out your profile page</h1>
+		<!-- inputs to provide user name & photo -->
+		<h2>What about You!</h2>
+		<!-- <h3>Name: </h3>
+		<input class="form-control" type="text" name="name" id="userName">
+		<br>
+		<h3>Email: </h3>
+		<input class="form-control" type="text" name="email" id="userEmail">
+		<br> -->
+		<h3>Short Bio: </h3>
+		<input class="form-control" type="text" name="bio" id="userBio">
+		<h3>Link to Photo Image: </h3>
+		<input class="form-control" type="text" name="img-link" id="userImage">
+		<br>
+		<!-- start with 4 but could add more classes -->
+		<h3>List of classes: </h3>
+		<ul>
+		<p><strong>1.</strong></p><input class="form-control" type="text" name="classList1" id="classes">
+		<p><strong>2.</strong></p><input class="form-control" type="text" name="classList2" id="classes">
+		<p><strong>3.</strong></p><input class="form-control" type="text" name="classList3" id="classes">
+		<p><strong>4.</strong></p><input class="form-control" type="text" name="classList4" id="classes">
+	</ul>
+		<br>
+<!-- user interests input -->
+	<form>
+		<span id="userInterest"><h3>Tell us your interests: </h3><input id="interest" type="text" ><input id="add-interest" value="Add Item" type="submit"></span>
+	</form>
+<!-- div filled with user interests -->
+	<div id="userInterests"></div>
+
+
+	<!-- jQuery activation -->
+	<script type="text/javascript">
+		// javascript code for the list of interests
+    var interestCount = 0;
+
+    $("#add-interest").on("click", function(event) {
+      event.preventDefault();
+
+      var interestAddition = $("#interest").val().trim();
+
+      var newInterest = $("<p>");
+
+      newInterest.attr("id", "item-" + interestCount);
+      newInterest.append(" " + interestAddition);
+
+      var removeInterest = $("<button>");
+      removeInterest.attr("data-interest", interestCount);
+      removeInterest.addClass("removal");
+      removeInterest.append("X");
+
+      newInterest = newInterest.prepend(removeInterest);
+
+      $("#userInterests").append(newInterest);
+
+      $("#userInterests").val("");
+      interestCount++;
+    });
+    // When a user clicks a check box then delete the specific content
+    // (NOTE: Pay attention to the unusual syntax here for the click event.
+    // Because we are creating click events on "dynamic" content, we can't just use the usual "on" "click" syntax.)
+    $(document.body).on("click", ".removal", function() {
+      // Get the number of the button from its data attribute and hold in a variable called  toDoNumber.
+      var interestNumber = $(this).attr("data-interest");
+      // Select and Remove the specific <p> element that previously held the to do item number.
+      $("#item-" + interestNumber).remove();
+    });
+
+
+		
+	</script>
+</body>
+
+</html>

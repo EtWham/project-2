@@ -4,148 +4,154 @@
 <head>
 	<title>User Survey</title>
 	<meta charset="utf-8">
-	<!-- bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<!-- jQuery -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<!-- Font Awesome Glyphicons -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<!-- Chosen -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+	<script src="../dbAdd.js"></script>
+
+<style>
+	/* Remove the navbar's default margin-bottom and rounded borders */
+	.navbar {
+		margin-bottom: 0;
+		border-radius: 0;
+	}
+
+	/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+	.row.content {height: 450px}
+
+	/* Set gray background color and 100% height */
+	.sidenav {
+		padding-top: 20px;
+		background-color: #f1f1f1;
+		height: 100%;
+	}
+
+	/* Set black background color, white text and some padding */
+	footer {
+		background-color: #555;
+		color: white;
+		padding: 15px;
+	}
+
+	/* On small screens, set height to 'auto' for sidenav and grid */
+	@media screen and (max-width: 767px) {
+		.sidenav {
+			height: auto;
+			padding: 15px;
+		}
+		.row.content {height:auto;}
+	}
+</style>
+</head>
+<body>
+<!-- navbar -->
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<img src="./assets/img/studycenter.jpg" alt="logo" class="img-rounded" style="width:50px;height:50px; margin-right:20px;">
+	</div>
+	<div class="collapse navbar-collapse" id="myNavbar">
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="HomePage.html">Home</a></li>
+			<li><a href="profile.html">Student Profile</a></li>
+			<li><a href="contact.html">Contact Us</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		</ul>
+	</div>
+</div>
+</nav>
 <body>
 	<div class="container" id="userInput">
-		<h1 class="page-header">Please fill out our user survey</h1>
-		<!-- inputs to provide user name & photo -->
-		<h2><strong>What about You!</strong></h2>
+		<h1 class="page-header">Please fill out this short survey to find your study buddy!</h1>
+		<!-- inputs to provide user name, email, & photo -->
 		<h3>Name: </h3>
 		<input class="form-control" type="text" name="name" id="userName">
 		<br>
 		<h3>Email: </h3>
 		<input class="form-control" type="text" name="email" id="userEmail">
 		<br>
-		<h3>Short Bio: </h3>
-		<input class="form-control" type="text" name="bio" id="userBio">
 		<h3>Link to Photo Image: </h3>
-		<input class="form-control" type="text" name="img-link" id="userImage">
+		<input class="form-control" type="text" name="img-link" id="userImage" required>
 		<br>
-		<!-- start with 4 but make button to add more classes -->
-		<h3>List of classes: </h3>
-		<ul>
-		<input class="form-control" type="text" name="classList1" id="classes">
-		<input class="form-control" type="text" name="classList2" id="classes">
-		<input class="form-control" type="text" name="classList3" id="classes">
-		<input class="form-control" type="text" name="classList4" id="classes">
-	</ul>
-		<br>
+
 		<!-- survey questions -->
-		<!-- brought to specific instances of surveys on click of classes/topics user registered for -->
-		<h2 class="page-header"></h2>
 		<h2><strong>Q 1</strong></h2>
-		<h3>Question 1</h3>
-		<select id="survey1">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
+		<h3><strong>How strong is your confidence that you will succeed in the following subject area?</strong></h3>
+		<select class="chosen-select" id="survey1">
+			<option value="1">1 (Not Confident)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Very Confident)</option>
 		</select>
 
 		<h2><strong>Q 2</strong></h2>
-		<h3>Question 2</h3>
-		<select id="survey2">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
+		<h3><strong>What is the highest level of education that you have recieved within the following subject area?</strong></h3>
+		<select class="chosen-select" id="survey2">
+			<option value="1">None</option>
+			<option value="2">High School</option>
+			<option value="3">Undergraduate</option>
+			<option value="5">Graduate or Above</option>
 		</select>
 
 		<h2><strong>Q 3</strong></h2>
-		<h3>Question 3</h3>
-		<select id="survey3">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
+		<h3><strong>How enthusitatic are you in learning more about this subject matter?</strong></h3>
+		<select class="chosen-select" id="survey3">
+			<option value="1">1 (Slightly Interested)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Extremly Interested)</option>
 		</select>
 
 		<h2><strong>Q 4</strong></h2>
-		<h3>Question 4</h3>
-		<select id="survey4">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
+		<h3><strong>If the situation arises, are you comfortable aiding others in this respective subject area?</strong></h3>
+		<select class="chosen-select" id="survey4">
+			<option value="1">1 (Strongly Uncomfortable)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Comfortable)</option>
 		</select>
 
 		<h2><strong>Q 5</strong></h2>
-		<h3>Question 5</h3>
-		<select id="survey5">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
-		</select>
-
-		<h2><strong>Q 6</strong></h2>
-		<h3>Question 6</h3>
-		<select id="survey6">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
-		</select>
-
-		<h2><strong>Q 7</strong></h2>
-		<h3>Question 7</h3>
-		<select id="survey7">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
-		</select>
-
-		<h2><strong>Q 8</strong></h2>
-		<h3>Question 8</h3>
-		<select id="survey8">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
-		</select>
-
-		<h2><strong>Q 9</strong></h2>
-		<h3>Question 9</h3>
-		<select id="survey9">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
-		</select>
-
-		<h2><strong>Q 10</strong></h2>
-		<h3>Question 10</h3>
-		<select id="survey10">
-			<option>1 (Strongly Disagree)</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4 (Strongly Agree)</option>
+		<h3><strong>Do you believe you will require assistance in this subject area?</strong></h3>
+		<select class="chosen-select" id="survey5">
+			<option value="0">yes </option>
+			<option value="2.5">maybe</option>
+			<option value="4">unlikely</option>
+			<option value="5">no</option>
 		</select>
 	</div>
 	<!-- creating the submit button  -->
 	<div class="text-left">
-		<button type="button" class="btn btn-primary" id="submit-btn" data-toggle="modal" data-target="#theModal"><span class="glyphicon glyphicon-share-alt"></span>Submit</button>
+		<button type="submit" class="btn btn-primary" id="submit-btn" data-toggle="modal" data-target="#theModal"><span class="glyphicon glyphicon-share-alt"></span>Submit</button>
 	</div>
 	<!-- creating the modal -->
-	<div id="theModal" class="modal fade" role="dialog">
+	<div id="modal-results" class="modal fade" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">Your match!<h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+					<h2 class="modal-title">Your study buddy!<h2>
 				</div>
 				<div class="modal-body">
-					<h5 class="modal-title" id="matchName"></h5>
-					<!-- <h5 class="modal-title" id="matchEmail"></h5> -->
-					<img id="matchImage" src="">
+					<h2 class="modal-title" id="buddyName"></h2>
+					<h2 class="modal-title" id="buddyEmail"></h2>
+					<img id="buddyImage" src="" alt="">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -153,34 +159,81 @@
 			</div>
 		</div>
 	</div>
+
 	<!-- jQuery activation -->
-	<!-- want to match by distance, meaning the lowest scores on the survey get matched with the highest then the lower get matched with the higher and the low get matched with the high and so on -->
 	<script type="text/javascript">
-		$('#submit-btn').on('click', function() {
-			//creates the array to store the scores from the survey questions
-			var scoreArray = [];
-			//runs through the survey question ids taking the user answers making them integers then pushing them into the score array
-			for (var i = 1; i < 11; i++) {
-				var scoreNum = $("#survey" + i).val().trim().charAt(0);
-				scoreArray.push(parseInt(scoreNum));
+
+		// Chosen CSS
+		var config = {
+			".chosen-select": {},
+			".chosen-select-deselect": {
+				allow_single_deselect: true
+			},
+			".chosen-select-no-single": {
+				disable_search_threshold: 10
+			},
+			".chosen-select-no-results": {
+				no_results_text: "Oops, nothing found!"
+			},
+			".chosen-select-width": {
+				width: "95%"
 			}
-			//creates the newMatch object
-			var newUser = {
-				name: $('#name').val().trim(),
-				photo: $('#img-link').val().trim(),
-				scores: scoreArray
-			}
-			//post request sending the newMatch object to the server
-			$.post('/api/matches', newMatch)
-				.done(function(response) {
-					// returns the response, which should be the equal or closest match
-					var bestMatch = response;
-					//appends to divs on the page for the user to see
-					$('#match-name').text(bestMatch.name);
-					$('#match-img').attr('src', bestMatch.photo);
+		};
+
+		for (var selector in config) {
+			$(selector).chosen(config[selector]);
+		}
+		// Capture the form inputs
+		$("#submit-btn").on("click", function(event) {
+			event.preventDefault();
+			// Form validation
+			function validateForm() {
+				var isValid = true;
+				$(".form-control").each(function() {
+					if ($(this).val() === "") {
+						isValid = false;
+					}
 				});
+
+				$(".chosen-select").each(function() {
+					if ($(this).val() === "") {
+						isValid = false;
+					}
+				});
+				return isValid;
+			}
+			// If all required fields are filled
+			if (validateForm()) {
+				// Create an object for the user"s data
+
+				var userData = {
+					name: $("#userName").val(),
+					email: $("#userEmail").val(),
+					photo: $("#userImage").val(),
+					score: [
+						$("#survey1").val(),
+						$("#survey2").val(),
+						$("#survey3").val(),
+						$("#survey4").val(),
+						$("#survey5").val()
+					]
+				};
+
+				$.post("/api/studyusers", userData, function(data) {
+					// Grab the result from the AJAX post so that the best match's name and photo are displayed.
+					$("#buddyName").text(data.name);
+					$("#buddyEmail").text(data.email);
+					$("#buddyImage").attr("src", data.photo);
+					// Show the modal with the best match
+					$("#modal-results").modal("toggle");
+				});
+			} else {
+				alert("Please fill out all fields before submitting!");
+			}
 		});
 	</script>
+
+
 </body>
 
 </html>
